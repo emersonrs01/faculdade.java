@@ -1,47 +1,30 @@
 import java.util.Scanner;
 
 public class exercicio01{
-  public static void main(String[] args) {
+  public static void main(String[] args){
     Scanner teclado = new Scanner(System.in);
-    float n=0,r=0,mn=10,aux=0,r1=0;
-    System.out.println("digite a nota do aluno 1: ");
-    n=teclado.nextFloat();
-    mn=n;
-
-    for(int i=2;i<=5;i++){
-      if(n<mn){
-        aux=mn;
-        mn=n;
-        n=aux;
-      }
-      if(n<0 || n>10){
-        do{
-          System.out.println("digite novamente a nota do aluno sendo de 0 a 10");
-          n=teclado.nextFloat();
-          if(n<mn){
-            aux=mn;
-            mn=n;
-            n=aux;
-          }
-        }while(n<0 || n>10);
-      }
-      r1=r1+r;
-      r=somatorio(n);
-      System.out.println("digite a nota do aluno "+i+": ");
+    float n=0,m=0,mn=11,med=0,notas=0;
+    for(int i=1;i<=5;i++){
+      System.out.println("Nota do Aluno "+i+" = ");
       n=teclado.nextFloat();
+      while(n<0 || n>10){
+        System.out.println("digite novamente a nota do aluno sendo de 0 a 10 ");
+        n=teclado.nextFloat();
+      }
+      if(n<mn){
+        mn=n;
+      }
+      notas+=n;    
     }
-    res(r1);
+    med=somatorio(notas,mn);
+    out(med);
   }
-
-  public static float somatorio(Float n){
-    float r2=0;
-    r2=n/3;
-    return r2;
-
+  public static float somatorio(Float notas, Float mn){
+    float m=0;
+    m=(notas-mn)/4;   
+    return m;
   }
-
-  public static void res(float r1){
-    System.out.println("a media dos aluno foi: "+r1);
+  public static void out(float md){
+    System.out.println("a media dos aluno foi: "+md);
   }
-
 }
