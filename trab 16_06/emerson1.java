@@ -21,6 +21,9 @@ public class emerson1{
         }
       }
     }
+    for(int i=0;i<5;i++){
+      System.out.println("valor em ordem decrescente: "+v[i]);
+    }
     status=true;
     while(status){
       status=false;
@@ -35,15 +38,15 @@ public class emerson1{
         }
       }
       if(test){
-        System.out.println("o numero "+num+" esta na posicao"+vet);
-        System.out.println("deseja realizar uma nova perquisa?");
+        System.out.println("o numero "+num+" esta na posicao "+vet);
+        System.out.println("deseja realizar uma nova perquisa? Digite 1");
         n=teclado.nextInt();
         if(n==1){
           status=true;
         }
       }else{
         System.out.println("o numero "+num+"nao esta no vetor");
-        System.out.println("deseja realizar uma nova perquisa?");
+        System.out.println("deseja realizar uma nova perquisa? Digite 1");
         n=teclado.nextInt();
         if(n==1){
           status=true;
